@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import TodoItem from './components/TodoItem.js';
+import Music from './components/Music.js';
+import Listing from './components/Listing.js';
+import { Container, Row, Col } from 'reactstrap';
+import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.todoItems = [
+      "Mua bim bim",
+      "Di cho",
+      "Do xang"
+    ];
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Container>
+        <br />
+          <Row>
+            <Col>
+              <h2>Sugar</h2>
+            </Col>
+          </Row>
+          <br /><br />
+          <br />
+          <Row>
+            <Col>
+              <InputGroup>
+                <Input />
+                <InputGroupAddon addonType="append">
+                  <InputGroupText>Search</InputGroupText>
+                </InputGroupAddon>
+              </InputGroup>
+            </Col>
+          </Row>
+          <br /><br />
+          <Row>
+            <Col>
+              <Music url={"http://streaming.tdiradio.com:8000/house.mp3"}/>
+            </Col>
+          </Row>
+          <br /><br />
+          <Row>
+            <Col>
+              {
+                // this.todoItems.map((item, index) => <TodoItem key={index} title={item} />)
+                <Listing />
+              }
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
