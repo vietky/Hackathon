@@ -28,7 +28,7 @@ class Listing extends Component {
             <ListGroupItem key={index}>
               <Media>
                 <Media left href="#">
-                  <img src={require("./images/"+listitem.image)} />
+                  <img alt="abc" src={require("./images/" + listitem.image)} />
                 </Media>
                 <Media body>
                   <Media heading>
@@ -36,7 +36,7 @@ class Listing extends Component {
                   </Media>
                   {listitem.decription}
                   <br />
-                  <Music url={listitem.url}/>
+                  <Music url={listitem.url} />
                 </Media>
               </Media>
             </ListGroupItem>

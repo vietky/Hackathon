@@ -20,3 +20,46 @@
 .App-link {
   color: #09d3ac;
 } */
+
+
+.formInput {
+  max-width: 400px;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center-object {
+  display: block;
+  margin: auto;
+}
+
+
+.thumbnail-container {
+  overflow-x: scroll;
+  height: 200px;
+  width: 100%;
+  padding: 0 3px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+}
+
+.thumbnail-list {
+  padding: 0px;
+  white-space:nowrap;
+  list-style-type: none;
+}
+
+.thumbnail-list li {
+   display: inline-block;
+}
+
+.thumbnail-image {
+  display: block;
+  padding:2px;
+  margin: 2px;
+  max-width: 200px;
+  height: 200px;
+}
