@@ -1,0 +1,38 @@
+.image {
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 50px;
+    min-height: 50px;
+    width: 100px;
+}
+
+.play__button {
+    position: absolute !important;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    opacity: 0.5;
+}
+
+.round {
+    border-radius: 50% !important;
+    width: 60px;
+    height: 60px;
+}
+
+.play__button:hover {
+    opacity: 1;
+}
+
+.listing__body {
+    padding-left: 20px;
+}
+
+.listing__group {
+    height: 146px;
+}
+
+.listing__image {
+    position: relative !important;
+    width: 100px;
+    height: 120px;
+}

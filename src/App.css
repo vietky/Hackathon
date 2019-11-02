@@ -21,7 +21,6 @@
   color: #09d3ac;
 } */
 
-
 .formInput {
   max-width: 400px;
   margin: auto;
@@ -62,4 +61,24 @@
   margin: 2px;
   max-width: 200px;
   height: 200px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.banner {
+  object-fit: contain;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.play__list{
+  background-color: bisque;
+  padding-top: 4px;
+  padding-left: 26px;
+}
+
+.navbar{
+  background-color: #007bFF !important;
 }
