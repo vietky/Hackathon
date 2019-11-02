@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import AdInsert from './AdInsert';
 import AdListing from './AdListing';
 import AdView from './AdView';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink} from 'reactstrap';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -19,22 +27,27 @@ import {
 // work properly.
 
 export default function BasicExample() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/adview">About</Link>
-          </li>
-          <li>
-            <Link to="/adinsert">Dashboard</Link>
-          </li>
-        </ul>
-
-        <hr />
+      <Navbar className="navbar" color="light" light expand="md">
+        <NavbarBrand href="/">Sugar</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink href="/adview">Adview</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/adinsert">AdInsert</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
 
         {/*
           A <Switch> looks through all its children <Route>
