@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ListGroup, ListGroupItem, Media } from 'reactstrap';
 import PlayMusic from './PlayMusic.js';
 import './listing.css';
-import { Container, Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { Button } from "reactstrap";
 
 
@@ -15,11 +15,11 @@ class Listing extends Component {
 
   componentDidMount() {
     fetch('https://dev-racer-252811.appspot.com/ads/get-all')
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ listitems: data })
-    })
-    .catch(console.log)
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({ listitems: data })
+      })
+      .catch(console.log)
   }
 
   // state = {

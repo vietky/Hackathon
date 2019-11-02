@@ -15,7 +15,8 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink} from 'reactstrap';
+  NavLink
+} from 'reactstrap';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -32,22 +33,22 @@ export default function BasicExample() {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Router>
-      <div>
-      <Navbar className="navbar" color="light" light expand="md">
-        <NavbarBrand href="/">Sugar</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/adview">Adview</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/adinsert">AdInsert</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
+    <div className="container">
+      <Router>
+        <Navbar className="navbar" color="light" light expand="md">
+          <NavbarBrand href="/">Sugar</NavbarBrand>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/adview">Adview</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/adinsert">AdInsert</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -67,7 +68,7 @@ export default function BasicExample() {
             <AdInsert />
           </Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }

@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
 import Upload from './components/Upload';
+import Recorder from './components/Recorder';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
-    this.todoItems = [
-      "Mua bim bim",
-      "Di cho",
-      "Do xang"
-    ];
+    this.todoItems = [];
   }
 
   render() {
     return (
       <div className="container">
-        <form className="formInput">
+        <form className="form-horizontal form-input">
           <Upload />
           <div className="form-group">
-            <label htmlFor="titleInput">Title</label>
-            <input type="text" className="form-control" id="titleInput" placeholder="Title" />
+            <div className="row">
+              <div className="col-sm-2">
+                <label for="inputTitle" className="control-label">Title</label>
+              </div>
+              <div className="col-sm-10">
+                <input type="text" className="form-control" id="inputTitle" placeholder="Title" />
+              </div>
+            </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="imageUploadInput">Upload Image</label>
-            <input type="file" id="imageUploadInput" />
-          </div>
+          <Recorder />
           <div className="form-group">
             <button type="submit" className="btn btn-primary center-object">Submit</button>
           </div>

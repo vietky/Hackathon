@@ -44,7 +44,6 @@ class Upload extends React.Component {
         </li>
       )
     }
-    console.log('imageList', imageList);
     return (
       <div className="form-group" >
         <div className="thumbnail-container">
@@ -57,4 +56,4 @@ class Upload extends React.Component {
     );
   }
 }
-module.exports = Upload
+export default Upload
