@@ -17,7 +17,7 @@ class App extends Component {
           <div className="form-group">
             <div className="row">
               <div className="col-sm-2">
-                <label for="inputTitle" className="control-label">Title</label>
+                <label htmlFor="inputTitle" className="control-label">Title</label>
               </div>
               <div className="col-sm-10">
                 <input type="text" className="form-control" id="inputTitle" placeholder="Title" />
@@ -25,6 +25,14 @@ class App extends Component {
             </div>
           </div>
           <Recorder />
+          <div className="row">
+            <div className="col-sm-2">
+              <label htmlFor="inputPrice" className="control-label">Price</label>
+            </div>
+            <div className="col-sm-10">
+              <input type="text" className="form-control" id="inputPrice" placeholder="Price" defaultValue="1000000" />
+            </div>
+          </div>
           <div className="form-group">
             <button type="submit" className="btn btn-primary center-object">Submit</button>
           </div>
