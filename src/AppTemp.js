@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdInsert from './AdInsert';
-import AdListing from './AdListing';
-import AdView from './AdView';
+import AdListing from './components/AdListing.js';
+import AdView from './components/AdDetail.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,7 +35,7 @@ export default function BasicExample() {
   return (
     <div className="container">
       <Router>
-        <Navbar className="navbar" color="light" light expand="md">
+        <Navbar className="navbar" color="yellow" light expand="md">
           <NavbarBrand href="/">Sugar</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
