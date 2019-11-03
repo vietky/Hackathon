@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import './advue.css';
-import './main.css';
+import './css/advue.css';
+import './css/main.css';
 
 class AdDetail extends Component {
     render() {

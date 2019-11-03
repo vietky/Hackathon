@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Listing from './components/Listing.js';
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Container>
+        <div className="container">
           <br />
           <Row>
             <Col>
@@ -26,14 +26,8 @@ class App extends Component {
             </InputGroup>
           </Row>
           <br />
-          <Row>
-            <Col>
-              {
-                <Listing />
-              }
-            </Col>
-          </Row>
-        </Container>
+          <Listing />
+        </div>
       </div>
     );
   }

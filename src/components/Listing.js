@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import { ListGroup, ListGroupItem, Media } from 'reactstrap';
 import PlayMusic from './PlayMusic.js';
 import PlayList from './PlayList.js';
-import './listing.css';
 import { Row } from 'reactstrap';
 import { Button } from "reactstrap";
-
-
-
+import './css/listing.css';
+import MusicPlayer from './MusicPlayer';
 
 class Listing extends Component {
   state = {
