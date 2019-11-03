@@ -75,9 +75,9 @@ class AdListing extends Component {
                     <div class="row flex-nowrap">
                         <div id="player__buttons" class="col-4">
                             <div class="just-center-middle">
-                                <img /images/icon-player-backward.svg")} height="20" />
-                                <img /images/icon-player-pause.svg")} height="40" />
-                                <img /images/icon-player-forward.svg")} height="20" />
+                                <img src="/images/icon-player-backward.svg" height="20" />
+                                <img src="/images/icon-player-pause.svg" height="40" />
+                                <img src="/images/icon-player-forward.svg" height="20" />
                             </div>
                         </div>
                         <div id="player__content" class="col-8">
@@ -93,7 +93,7 @@ class AdListing extends Component {
                     {/* <!-- AN AD --> */}
                     <div class="ad-itemx flex-nowrap row">
                         <div class="ad-itemx__image col-4">
-                            <img /images/xe-dap.jpg")} alt="" />
+                            <img src="/images/xe-dap.jpg" alt="" />
                             <svg class="ad-itemx__image-player" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M128 104.3v303.4c0 6.4 6.5 10.4 11.7 7.2l240.5-151.7c5.1-3.2 5.1-11.1 0-14.3L139.7 97.2c-5.2-3.3-11.7.7-11.7 7.1z" /></svg>
                         </div>
                         <div class="ad-itemx__detail col-8">
@@ -105,7 +105,7 @@ class AdListing extends Component {
                                     465.000.000 đ
                                 </div>
                                 <div class="ad-itemx__detail__tilo">
-                                    <img width="20" /images/icon-bag.svg")} />
+                                    <img width="20" src="/images/icon-bag.svg" />
                                     &nbsp;
                                     <span class="just-a-slice"></span>
                                     &nbsp;
@@ -122,7 +122,7 @@ class AdListing extends Component {
                     {/* <!-- AN AD --> */}
                     <div class="ad-itemx flex-nowrap row">
                         <div class="ad-itemx__image col-4">
-                            <img /images/xe-dap.jpg")} alt="" />
+                            <img src="/images/xe-dap.jpg" alt="" />
                             <svg class="ad-itemx__image-player" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M128 104.3v303.4c0 6.4 6.5 10.4 11.7 7.2l240.5-151.7c5.1-3.2 5.1-11.1 0-14.3L139.7 97.2c-5.2-3.3-11.7.7-11.7 7.1z" /></svg>
                         </div>
                         <div class="ad-itemx__detail col-8">
@@ -134,7 +134,7 @@ class AdListing extends Component {
                                     465.000.000 đ
                                 </div>
                                 <div class="ad-itemx__detail__tilo">
-                                    <img width="20" /images/icon-bag.svg")} />
+                                    <img width="20" src="/images/icon-bag.svg" />
                                     &nbsp;
                                     <span class="just-a-slice"></span>
                                     &nbsp;
@@ -151,7 +151,7 @@ class AdListing extends Component {
                     {/* <!-- AN AD --> */}
                     <div class="ad-itemx flex-nowrap row">
                         <div class="ad-itemx__image col-4">
-                            <img /images/xe-dap.jpg")} alt="" />
+                            <img src="/images/xe-dap.jpg" alt="" />
                             <svg class="ad-itemx__image-player" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M128 104.3v303.4c0 6.4 6.5 10.4 11.7 7.2l240.5-151.7c5.1-3.2 5.1-11.1 0-14.3L139.7 97.2c-5.2-3.3-11.7.7-11.7 7.1z" /></svg>
                         </div>
                         <div class="ad-itemx__detail col-8">
@@ -163,7 +163,7 @@ class AdListing extends Component {
                                     465.000.000 đ
                                 </div>
                                 <div class="ad-itemx__detail__tilo">
-                                    <img width="20" /images/icon-bag.svg")} />
+                                    <img width="20" src="/images/icon-bag.svg" />
                                     &nbsp;
                                     <span class="just-a-slice"></span>
                                     &nbsp;

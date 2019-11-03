@@ -27,12 +27,12 @@ export default function BasicExample() {
   return (
     <div className="container">
       <Router>
-        <nav id="nav-main" class="navbar fixed-top navbar-light bg-main">
+        <nav id="nav-main" className="navbar fixed-top navbar-light bg-main">
           <Link to="/">
             <img id="img-logo" src="/images/logo.png" alt="Responsive image" height="30" />
           </Link>
           <Link className="navbar-brand no-padding no-margin" to="/adview">
-            <button id="btn-post" class="btn btn-warn">ĐĂNG TIN</button>
+            <button id="btn-post" className="btn btn-warn">ĐĂNG TIN</button>
           </Link>
         </nav>
         {/*
