@@ -86,7 +86,6 @@ class Recorder extends React.Component {
       await checkMicrophone((microphone) => {
         this.setState({
           recording: true,
-          audioSrc: null,
           playing: false,
         })
         record(microphone);
@@ -106,7 +105,6 @@ class Recorder extends React.Component {
     recorder.stopRecording(() => {
       self.props.onRecorded(recorder);
       self.setState({
-        audioSrc: URL.createObjectURL(recorder.getBlob()),
         recording: false,
         playing: false,
       });
@@ -140,7 +138,7 @@ class Recorder extends React.Component {
             <button onClick={this.record}>Record</button>
             <button onClick={this.stop} disabled={!this.state.recording}>Stop</button>
             <button onClick={this.play} disabled={this.state.recording}>Play</button>
-            <ReactAudioPlayer src={this.props.audioSrc} ref={c => (this.player = c)}
+            <ReactAudioPlayer src={this.props.data} ref={c => (this.player = c)}
               onEnded={this.songEnded}
               muted={this.state.recording}
             />

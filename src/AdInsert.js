@@ -5,22 +5,26 @@ import SugarService from './services/SugarService';
 
 import './App.css';
 
+const DefaultMessage = 'Find your ad insert status here';
+
 class App extends Component {
   constructor() {
     super();
     this.onPriceChanged = this.onPriceChanged.bind(this);
     this.onTitleChanged = this.onTitleChanged.bind(this);
     this.onImagesSelected = this.onImagesSelected.bind(this);
-    this.onRecorded = this.onRecorded.bind(this);
+    this.onDescriptionRecorded = this.onDescriptionRecorded.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      images: [],
-      records: [],
       title: 'random title',
       description: 'auto-generated',
+      descriptionRecordUrl: null,
+      images: [],
       price: '1000000',
       category: 5010,
+      message: DefaultMessage,
+      errorMessage: ''
     }
   }
 
@@ -50,19 +54,33 @@ class App extends Component {
         }
         this.setState({
           images,
+          message: `Uploaded ${images.length} images`
         });
       })
       .catch((err) => {
-        console.log('onImagesSelected', err);
+        this.setState({
+          message: '',
+          errorMessage: err
+        });
       })
   }
 
-  onRecorded(record) {
-    const records = this.state.records;
-    records.push(record);
-    this.setState({
-      records
-    });
+  async onDescriptionRecorded(record) {
+    try {
+      const result = await SugarService.upload('records', record.getBlob());
+      console.log('onDescriptionRecorded ne', result);
+      this.setState({
+        descriptionRecordUrl: result.url,
+        message: 'Done recording',
+      });
+    }
+    catch (err) {
+      console.log('onDescriptionRecorded', err)
+      this.setState({
+        message: '',
+        errorMessage: err
+      });
+    }
   }
 
   async onSubmit(e) {
@@ -71,15 +89,25 @@ class App extends Component {
       const result = await SugarService.submit({
         title: this.state.title,
         description: this.state.description,
+        voice_description: this.state.descriptionRecordUrl,
         price: this.state.price,
         category: this.state.category,
-        "voice_description_url": "https://storage.googleapis.com/sugar-maroon/records/402c8360-fc90-11e9-a051-2ff539329425",
         images: this.state.images,
+      });
+      this.setState({
+        message: 'Done!',
+        errorMessage: '',
+        descriptionRecordUrl: null,
+        images: [],
       });
       console.log('AdInsert result ne', result);
     }
-    catch (e) {
-      console.log('err AdInsert', e);
+    catch (err) {
+      console.log('err AdInsert', err);
+      this.setState({
+        message: '',
+        errorMessage: err
+      });
     }
   }
 
@@ -87,6 +115,16 @@ class App extends Component {
     return (
       <div className="container">
         <form className="form-horizontal form-input">
+          {this.state.message.length > 0 &&
+            (<div className="alert alert-primary" role="alert">
+              {this.state.message}
+            </div>)
+          }
+          {this.state.errorMessage.length > 0 &&
+            (<div className="alert alert-primary" role="alert">
+              {this.state.errorMessage}
+            </div>)
+          }
           <Upload data={this.state.images} onSelected={this.onImagesSelected} />
           <div className="form-group">
             <div className="row">
@@ -99,7 +137,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <Recorder data={this.state.records} onRecorded={this.onRecorded} />
+          <Recorder data={this.state.descriptionRecordUrl} onRecorded={this.onDescriptionRecorded} />
           <div className="row">
             <div className="col-sm-2">
               <label htmlFor="inputPrice" className="control-label">Price</label>
