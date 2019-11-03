@@ -1,50 +1,27 @@
-const React = require('react');
-
-function readFile(file) {
-  return new Promise((resolve, reject) => {
-    let reader = new FileReader();
-    reader.onloadend = () => {
-      return resolve({
-        file: file,
-        imagePreviewUrl: reader.result
-      });
-    }
-    // console.log('file', (event.target.files[i]));
-    reader.readAsDataURL(file);
-  });
-}
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class Upload extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      files: []
+    this.propTypes = {
+      onSelected: PropTypes.func,
     }
     this.handleChange = this.handleChange.bind(this)
   }
   async handleChange(event) {
-    let result = [];
-    // var i = 0;
-    var fileList = Array.from(event.target.files);
-    for (var i in fileList) {
-      let image = await readFile(fileList[i]);
-      result.push(image);
-    }
-    this.setState({
-      files: result,
-    })
+    this.props.onSelected(event.target.files);
   }
 
   render() {
     let imageList = [];
-    for (var i in this.state.files) {
+    for (var i in this.props.data) {
       imageList.push(
         <li key={'li-img-upload-' + i}>
-          <img className="thumbnail-image" alt={'uploaded-images-' + i} src={this.state.files[i].imagePreviewUrl} />
+          <img className="thumbnail-image" alt={'uploaded-images-' + i} src={this.props.data[i]} />
         </li>
       )
     }
-    console.log('imageList', imageList);
     return (
       <div className="form-group" >
         <div className="thumbnail-container">
@@ -57,4 +34,5 @@ class Upload extends React.Component {
     );
   }
 }
-module.exports = Upload
+
+export default Upload

@@ -1,28 +1,5 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-} */
-
-.formInput {
-  max-width: 400px;
+.form-input {
+  max-width: 500px;
   margin: auto;
 }
 
@@ -30,9 +7,9 @@
   text-align: center;
 }
 
-.center-object {
+.btn-submit {
   display: block;
-  margin: auto;
+  margin: 4px auto;
 }
 
 
@@ -41,7 +18,7 @@
   height: 200px;
   width: 100%;
   padding: 0 3px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   border: 1px solid #000000;
 }
 
@@ -80,5 +57,5 @@ h2 {
 }
 
 .navbar{
-  background-color: #007bFF !important;
+  background-color: #bbbbbb;
 }

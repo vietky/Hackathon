@@ -3,7 +3,7 @@ import { ListGroup, ListGroupItem, Media } from 'reactstrap';
 import PlayMusic from './PlayMusic.js';
 import PlayList from './PlayList.js';
 import './listing.css';
-import { Container, Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { Button } from "reactstrap";
 
 
@@ -15,7 +15,7 @@ class Listing extends Component {
   }
 
   componentDidMount() {
-    fetch('https://dev-racer-252811.appspot.com/ads/get-all')
+    fetch('https://dev-racer-252811.appspot.com/api/ads/get-all')
       .then(res => res.json())
       .then((data) => {
         this.setState({ listitems: data })
@@ -40,7 +40,7 @@ class Listing extends Component {
               <Media>
                 <div className="listing__image">
                   <Media left href="#">
-                    {listitem.images[0] != undefined &&
+                    {listitem.images[0] &&
                       <img className="image" alt="abc" src={listitem.images[0]} />
                     }
                     <PlayMusic styles={"play__button"} url={listitem.voice_description_url} />

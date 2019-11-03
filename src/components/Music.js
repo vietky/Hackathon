@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Progress } from "reactstrap";
+import { Button } from "reactstrap";
 
 class Music extends Component {
   state = {
