@@ -15,7 +15,7 @@ class Listing extends Component {
   }
 
   componentDidMount() {
-    fetch('https://dev-racer-252811.appspot.com/ads/get-all')
+    fetch('https://dev-racer-252811.appspot.com/api/ads/get-all')
       .then(res => res.json())
       .then((data) => {
         this.setState({ listitems: data })
