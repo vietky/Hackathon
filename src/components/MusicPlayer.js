@@ -1,4 +1,5 @@
 import React from 'react';
+import Audio from './Audio';
 import './css/adlix.css';
 
 class MusicPlayer extends React.Component {
@@ -22,6 +23,7 @@ class MusicPlayer extends React.Component {
             <p id="player__content__title">TOYOTA VIOS 2019 MỚI NHIỀU ƯU ĐÃI GIÁ CỰC SỐC</p>
             <p id="player__content__price" className="text-dred">465.000.000 đ</p>
           </div>
+          <Audio />
         </div>
       </div>
     );
