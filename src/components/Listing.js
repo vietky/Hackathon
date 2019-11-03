@@ -43,7 +43,7 @@ class Listing extends Component {
                     {listitem.images[0] &&
                       <img className="image" alt="abc" src={listitem.images[0]} />
                     }
-                    <PlayMusic styles={"play__button"} url={listitem.voice_description_url} />
+                    <PlayMusic styles={"play__button"} url={listitem.voice_description} />
                   </Media>
                 </div>
                 <div className="listing__body">
