@@ -1,4 +1,5 @@
-const React = require('react');
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function readFile(file) {
   return new Promise((resolve, reject) => {
@@ -17,8 +18,8 @@ function readFile(file) {
 class Upload extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      files: []
+    this.propTypes = {
+      onSelected: PropTypes.func,
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -30,17 +31,15 @@ class Upload extends React.Component {
       let image = await readFile(fileList[i]);
       result.push(image);
     }
-    this.setState({
-      files: result,
-    })
+    this.props.onSelected(result);
   }
 
   render() {
     let imageList = [];
-    for (var i in this.state.files) {
+    for (var i in this.props.data) {
       imageList.push(
         <li key={'li-img-upload-' + i}>
-          <img className="thumbnail-image" alt={'uploaded-images-' + i} src={this.state.files[i].imagePreviewUrl} />
+          <img className="thumbnail-image" alt={'uploaded-images-' + i} src={this.props.data[i].imagePreviewUrl} />
         </li>
       )
     }

@@ -40,7 +40,7 @@ class Listing extends Component {
               <Media>
                 <div className="listing__image">
                   <Media left href="#">
-                    {listitem.images[0] != undefined &&
+                    {listitem.images[0] &&
                       <img className="image" alt="abc" src={listitem.images[0]} />
                     }
                     <PlayMusic styles={"play__button"} url={listitem.voice_description_url} />

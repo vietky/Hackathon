@@ -1,4 +1,5 @@
 import ReactAudioPlayer from './Audio';
+import PropTypes from 'prop-types';
 
 const React = require('react');
 const RecordRTC = require('recordrtc');
@@ -60,6 +61,10 @@ class Recorder extends React.Component {
   constructor(props) {
     super(props)
 
+    this.propTypes = {
+      onRecorded: PropTypes.func,
+    }
+
     this.player = React.createRef();
     this.play = this.play.bind(this);
     this.stop = this.stop.bind(this);
@@ -68,7 +73,6 @@ class Recorder extends React.Component {
 
     this.state = ({
       audioMuted: true,
-      audioSrc: null,
       recording: false,
       playing: false,
       errorMessage: '',
@@ -100,6 +104,7 @@ class Recorder extends React.Component {
     const self = this;
 
     recorder.stopRecording(() => {
+      self.props.onRecorded(recorder);
       self.setState({
         audioSrc: URL.createObjectURL(recorder.getBlob()),
         recording: false,
@@ -110,7 +115,7 @@ class Recorder extends React.Component {
 
   async play(e) {
     e.preventDefault();
-    // console.log('play ne', this.state.audioSrc);
+    // console.log('play ne', this.props.audioSrc);
     this.setState({
       playing: true,
     });
@@ -135,7 +140,7 @@ class Recorder extends React.Component {
             <button onClick={this.record}>Record</button>
             <button onClick={this.stop} disabled={!this.state.recording}>Stop</button>
             <button onClick={this.play} disabled={this.state.recording}>Play</button>
-            <ReactAudioPlayer src={this.state.audioSrc} ref={c => (this.player = c)}
+            <ReactAudioPlayer src={this.props.audioSrc} ref={c => (this.player = c)}
               onEnded={this.songEnded}
               muted={this.state.recording}
             />
