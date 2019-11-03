@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { ListGroup, ListGroupItem, Media } from 'reactstrap';
 import PlayMusic from './PlayMusic.js';
-import PlayList from './PlayList.js';
-import { Row } from 'reactstrap';
-import { Button } from "reactstrap";
 import './css/listing.css';
 import MusicPlayer from './MusicPlayer';
 
@@ -24,13 +21,7 @@ class Listing extends Component {
   render() {
     return (
       <div className="Listing">
-        <div className="play__list">
-          <Row>
-            <Button color="link">Previ</Button>
-            <PlayList url={"http://streaming.tdiradio.com:8000/house.mp3"} />
-            <Button color="link">Next</Button>
-          </Row>
-        </div>
+        <MusicPlayer />
         <br />
         <ListGroup>
           {this.state.listitems.map((listitem, index) => (

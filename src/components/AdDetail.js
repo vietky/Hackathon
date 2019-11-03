@@ -8,30 +8,30 @@ class AdDetail extends Component {
             <div className="AdDetail">
 
                 {/* AD PHOTOS */}
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                    <ol className="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src={require("./images/xe-dap.jpg")} alt="First slide" />
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <img className="d-block w-100" src="/images/xe-dap.jpg" alt="First slide" />
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src={require("./images/xe-dap-1.jpg")} alt="Second slide" />
+                        <div className="carousel-item">
+                            <img className="d-block w-100" src="/images/xe-dap-1.jpg" alt="Second slide" />
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src={require("./images/xe-dap-2.jpg")} alt="Third slide" />
+                        <div className="carousel-item">
+                            <img className="d-block w-100" src="/images/xe-dap-2.jpg" alt="Third slide" />
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                    <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                    <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Next</span>
                     </a>
                 </div>
 
@@ -42,11 +42,11 @@ class AdDetail extends Component {
                         {/* <!-- AD TITLE --> */}
                         <h3 id="ad-title">XE ĐẠP CUỘC 700C CỔ ĐIỂN - AZI BIKE 2019</h3>
                         {/* <!-- AD PRICE --> */}
-                        <span id="ad-price" class="text-dred">1.990.000 đ</span>
+                        <span id="ad-price" className="text-dred">1.990.000 đ</span>
                         {/* <!-- AD SAVE --> */}
-                        <button id="ad-save" class="btn btn-light text-dred" type="button">
+                        <button id="ad-save" className="btn btn-light text-dred" type="button">
                             Lưu tin
-                             <img width="20" src={require("./images/heart.png")} alt="like" />
+                             <img width="20" src="/images/heart.png" alt="like" />
                         </button>
                         {/* <!-- AD TIMESTAMP --> */}
                         <p>
@@ -59,24 +59,24 @@ class AdDetail extends Component {
                     {/* <!-- ONWER INFO --> */}
                     <div id="owner-info">
                         {/* <!-- OWNER BASIC --> */}
-                        <div class="card">
-                            <div class="row no-gutters">
-                                <div class="col-2">
-                                    <div class="text-center">
-                                        <img id="owner-avatar" src={require("./images/avatar.jpg")} class="card-img" />
+                        <div className="card">
+                            <div className="row no-gutters">
+                                <div className="col-2">
+                                    <div className="text-center">
+                                        <img alt="" id="owner-avatar" src="/images/avatar.jpg" className="card-img" />
                                     </div>
                                 </div>
-                                <div class="col-8">
-                                    <div id="owner-detail" class="card-body">
+                                <div className="col-8">
+                                    <div id="owner-detail" className="card-body">
                                         <h5 id="owner-detail__name">NGUYÊN</h5>
-                                        <p id="owner-detail__active" class="card-text">
+                                        <p id="owner-detail__active" className="card-text">
                                             <span>●</span>
                                             <small>Hoạt động 2 ngày trước</small>
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-2">
-                                    <button id="owner-shop-view" class="btn btn-warn text-dred" type="button">
+                                <div className="col-2">
+                                    <button id="owner-shop-view" className="btn btn-warn text-dred" type="button">
                                         Xem&nbsp;trang
                                     </button>
                                 </div>
@@ -84,16 +84,16 @@ class AdDetail extends Component {
                         </div>
 
                         {/* <!-- OWNER PROS --> */}
-                        <div id="owner-block" class="row text-center">
-                            <div class="col-4">
+                        <div id="owner-block" className="row text-center">
+                            <div className="col-4">
                                 Bán chuyên
-                                <span><img src={require("./images/icon-bag.png")} height="16" /></span>
+                                <span><img alt="" src="/images/icon-bag.png" height="16" /></span>
                             </div>
-                            <div class="col-4">
+                            <div className="col-4">
                                 Đánh giá
                                 <span>---</span>
                             </div>
-                            <div class="col-4">
+                            <div className="col-4">
                                 Phản hồi chat
                                 <span>91%</span>
                             </div>
@@ -102,7 +102,7 @@ class AdDetail extends Component {
 
                     {/* <!-- AD DESCRIPTION --> */}
                     <div id="ad-description">
-                        <p itemprop="description" class="col-xs-12 text-justify _1No0Ndy5xkVdszNItBaiuv">
+                        <p itemProp="description" className="col-xs-12 text-justify _1No0Ndy5xkVdszNItBaiuv">
                             jkuhbkdac
                         </p>
                         <div id="ad-tel">
