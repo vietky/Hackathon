@@ -1,0 +1,52 @@
+
+html > body * {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html > body {
+   /* For fixed navbar */
+   padding-top: 45px;
+}
+
+
+.text-dred {
+   color: #c90927;
+}
+
+.no-padding {
+   padding: 0;
+}
+.no-margin {
+   margin: 0;
+}
+
+.just-center-middle {
+   margin: 0 auto;
+   display: table;
+   vertical-align: middle;
+}
+
+.just-a-slice {
+   border-left: 1px solid rgb(150,150,150);
+}
+
+.bg-main {
+   background-color: #ffba00 !important;
+}
+
+#nav-main {
+   height: 45px;
+   padding: 3px;
+}
+
+#nav-main > .navbar-toggler {
+   border: none;
+}
+
+#btn-post {
+   font-size: 13px;
+   background-color: #fc9807;
+   color: #fff;
+   padding: 3px 6px;
+   margin-right: 10px;
+}
