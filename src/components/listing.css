@@ -3,7 +3,7 @@
     max-height: 200px;
     min-width: 50px;
     min-height: 50px;
-    width: 100px;
+    width: 130px;
 }
 
 .play__button {
@@ -28,11 +28,15 @@
 }
 
 .listing__group {
-    height: 146px;
+    height: 160px;
 }
 
 .listing__image {
     position: relative !important;
-    width: 100px;
-    height: 120px;
+    width: 130px;
+    height: 156px;
+}
+
+h5 {
+    color: red;
 }
