@@ -27,12 +27,10 @@ export default function BasicExample() {
   return (
     <div className="container">
       <Router>
-        <nav id="nav-main" class="navbar fixed-top navbar-expand-lg navbar-light bg-main">
-          <div class="navbar-toggler">
-            <Link to="/">
-              <img id="img-logo" src="./images/logo.png" alt="Responsive image" height="30" />
-            </Link>
-          </div>
+        <nav id="nav-main" class="navbar fixed-top navbar-light bg-main">
+          <Link to="/">
+            <img id="img-logo" src="/images/logo.png" alt="Responsive image" height="30" />
+          </Link>
           <Link className="navbar-brand no-padding no-margin" to="/adview">
             <button id="btn-post" class="btn btn-warn">ĐĂNG TIN</button>
           </Link>
@@ -56,6 +54,6 @@ export default function BasicExample() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </div >
   );
 }
