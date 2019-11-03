@@ -36,10 +36,25 @@ class App extends Component {
     });
   }
 
-  onImagesSelected(images) {
-    this.setState({
-      images,
-    });
+  onImagesSelected(selectedImages) {
+    let fileList = Array.from(selectedImages);
+    const promiseList = [];
+    for (var i in fileList) {
+      promiseList.push(SugarService.upload('images', fileList[i]));
+    }
+    return Promise.all(promiseList)
+      .then((results) => {
+        const images = this.state.images;
+        for (var i in results) {
+          images.push(results[i].url);
+        }
+        this.setState({
+          images,
+        });
+      })
+      .catch((err) => {
+        console.log('onImagesSelected', err);
+      })
   }
 
   onRecorded(record) {
@@ -59,10 +74,7 @@ class App extends Component {
         price: this.state.price,
         category: this.state.category,
         "voice_description_url": "https://storage.googleapis.com/sugar-maroon/records/402c8360-fc90-11e9-a051-2ff539329425",
-        "images": [
-          "https://cdn.chotot.com/PEcANX_34uLvxrUdQ33nXd0TwO3QMMBJpu_FPuvmbqU/preset:view/plain/a64ad0b71464d0715934a91ed1809c73-2634867474724428163.jpg",
-          "https://cdn.chotot.com/PEcANX_34uLvxrUdQ33nXd0TwO3QMMBJpu_FPuvmbqU/preset:view/plain/a64ad0b71464d0715934a91ed1809c73-2634867474724428163.jpg"
-        ],
+        images: this.state.images,
       });
       console.log('AdInsert result ne', result);
     }
@@ -98,7 +110,9 @@ class App extends Component {
             </div>
           </div>
           <div className="form-group">
-            <button type="submit" onClick={this.onSubmit} className="btn btn-primary center-object">Submit</button>
+            <div className="col-sm-12">
+              <button type="submit" onClick={this.onSubmit} className="btn btn-primary btn-submit">Submit</button>
+            </div>
           </div>
         </form>
       </div>

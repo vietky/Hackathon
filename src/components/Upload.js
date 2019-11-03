@@ -1,20 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function readFile(file) {
-  return new Promise((resolve, reject) => {
-    let reader = new FileReader();
-    reader.onloadend = () => {
-      return resolve({
-        file: file,
-        imagePreviewUrl: reader.result
-      });
-    }
-    // console.log('file', (event.target.files[i]));
-    reader.readAsDataURL(file);
-  });
-}
-
 class Upload extends React.Component {
   constructor(props) {
     super(props)
@@ -24,14 +10,7 @@ class Upload extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
   async handleChange(event) {
-    let result = [];
-    // var i = 0;
-    var fileList = Array.from(event.target.files);
-    for (var i in fileList) {
-      let image = await readFile(fileList[i]);
-      result.push(image);
-    }
-    this.props.onSelected(result);
+    this.props.onSelected(event.target.files);
   }
 
   render() {
@@ -39,7 +18,7 @@ class Upload extends React.Component {
     for (var i in this.props.data) {
       imageList.push(
         <li key={'li-img-upload-' + i}>
-          <img className="thumbnail-image" alt={'uploaded-images-' + i} src={this.props.data[i].imagePreviewUrl} />
+          <img className="thumbnail-image" alt={'uploaded-images-' + i} src={this.props.data[i]} />
         </li>
       )
     }
