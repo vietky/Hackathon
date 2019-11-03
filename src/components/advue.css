@@ -1,0 +1,113 @@
+#ad-content {
+   margin: 0 15px 5px;
+   padding: 5px 5px 5px 0;
+}
+
+#ad-highlight {
+   font-size: 1rem;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bold;
+}
+
+#ad-title {
+   font-size: 1rem;
+   margin: 10px 0 10px;
+   display: block;
+}
+
+#ad-price {
+   position:relative;
+   top: 6px;
+   background: none;
+   border: none;
+}
+
+#ad-save {
+   border-radius: 20px;
+   border: 1px solid #c90927;
+   padding: 3px 12px;
+   font-size: 0.8rem;
+   float: right;
+}
+
+#ad-timestamp {
+   position:relative;
+   top: 6px;
+   color: #999;
+   font-size: 0.75rem;
+}
+
+#owner-info {
+   padding-top: 10px;
+   border-top: 1px solid #E5E5E5;
+   border-bottom: 1px solid #E5E5E5;
+   padding-bottom: 20px;
+}
+
+#owner-info > .card {
+   border: none;
+}
+
+#owner-avatar {
+   margin-top: 5px;
+   width: 45px !important;
+   height: 45px !important;
+   border-radius: 50%;
+}
+
+#owner-shop-view {
+   border-radius: 20px;
+   border: 1px solid #ffba00;
+   color: #ffba00;
+   font-size: 0.75rem;
+   float: right;
+}
+
+#owner-detail {
+   padding-bottom: 10px;
+   padding-top: 10px;
+   padding-left: 10px;
+}
+
+#owner-detail * {
+   font-weight: bold;
+}
+
+#owner-detail__name {
+   margin-bottom: 3px;
+   font-size: 0.95rem;
+}
+
+#owner-detail__active > span {
+   display: inline-block;
+   transform: scale(1.4);
+   color: #999;
+}
+#owner-detail__active > small {
+   color: #999;
+   font-size: 0.7rem;
+}
+
+#owner-block {
+   color: #999;
+   font-weight: bold;
+   font-size: 0.75rem;
+}
+
+#owner-block :nth-of-type(2) {
+   border-right: 2px solid #E5E5E5;
+   border-left: 2px solid #E5E5E5;
+}
+
+#ad-description {
+   margin-top: 10px;
+   color: #333;
+   font-weight: bold;
+   font-size: 0.85rem;
+}
+
+#ad-tel {
+   text-decoration: underline;
+   cursor: pointer;
+   color: rgb(51, 101, 156);
+}
