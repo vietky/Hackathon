@@ -6,22 +6,22 @@ import './css/adlix.css';
 class MusicPlayer extends React.Component {
   constructor(props) {
     super(props)
-    this.propTypes = {
-      track: PropTypes.object,
-      onTrackEnded: PropTypes.func,
-    }
     this.onTrackEnded = this.onTrackEnded.bind(this);
   }
 
   componentDidMount() {
     // console.log('didmount', this.props.track);
     if (this.props.track.id > -1) {
-      this.player.audioEl.play()
+      if (this.player && this.player.audioEl) {
+        this.player.audioEl.play();
+      }
     }
   }
   componentDidUpdate(prevProps) {
     if (this.props.track.id !== prevProps.track.id) {
-      this.player.audioEl.play();
+      if (this.player && this.player.audioEl) {
+        this.player.audioEl.play();
+      }
     }
   }
 
@@ -49,6 +49,11 @@ class MusicPlayer extends React.Component {
       </div>
     );
   }
+}
+
+MusicPlayer.propTypes = {
+  track: PropTypes.object,
+  onTrackEnded: PropTypes.func,
 }
 
 export default MusicPlayer
