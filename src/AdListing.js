@@ -78,7 +78,7 @@ class AdListing extends Component {
                 </div>
               </div>
               {/* <!-- SEARCH INPUT --> */}
-              <input id="search-input" type="text" className="form-control" placeholder="Tìm sản phẩm mong muốn..." />
+              <input id="search-input" type="text" className="form-control" placeholder="Search" />
             </div>
           </div>
         </form>
@@ -89,31 +89,31 @@ class AdListing extends Component {
           <div className="row text-center flex-nowrap">
             <div className="col-sm-3">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-oto.png')` }}></div>
-              <span className="category-label">Ô tô</span>
+              <span className="category-label">Car</span>
             </div>
             <div className="col-sm-3">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-may.png')` }}></div>
-              <span className="category-label">Xe máy</span>
+              <span className="category-label">Motobike</span>
             </div>
             <div className="col-sm-3">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-tai.png')` }}></div>
-              <span className="category-label">Xe tải</span>
+              <span className="category-label">Truck</span>
             </div>
             <div className="col-sm-3">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-dien.png')` }}></div>
-              <span className="category-label">Xe điện</span>
+              <span className="category-label">Tram</span>
             </div>
             <div className="col-sm-3">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-dien.png')` }}></div>
-              <span className="category-label">Xe đạp</span>
+              <span className="category-label">Bicycle</span>
             </div>
             <div className="col-sm-3">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-la.png')` }}></div>
-              <span className="category-label">Phương tiện khác</span>
+              <span className="category-label">Other vehicles</span>
             </div>
             <div className="col-sm-3">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-phutung.png')` }}></div>
-              <span className="category-label">Phụ tùng xe</span>
+              <span className="category-label">Spare parts</span>
             </div>
           </div>
         </div>
