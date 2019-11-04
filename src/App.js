@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AdInsert from './AdInsert';
 import AdListing from './AdListing';
 import AdView from './AdView';
@@ -20,18 +20,14 @@ import {
 // work properly.
 
 export default function BasicExample() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
   return (
     <div className="container">
       <Router>
         <nav id="nav-main" className="navbar fixed-top navbar-light bg-main">
           <Link to="/">
-            <img id="img-logo" src="/images/logo.png" alt="Responsive image" height="30" />
+            <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
           </Link>
-          <Link className="navbar-brand no-padding no-margin" to="/adview">
+          <Link className="navbar-brand no-padding no-margin" to="/adinsert">
             <button id="btn-post" className="btn btn-warn">ĐĂNG TIN</button>
           </Link>
         </nav>
