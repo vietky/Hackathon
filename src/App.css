@@ -1,6 +1,6 @@
-.form-input {
-  max-width: 500px;
-  margin: auto;
+
+.alert-content {
+  margin-top: 5px;
 }
 
 .text-center {
@@ -12,14 +12,11 @@
   margin: 4px auto;
 }
 
-
 .thumbnail-container {
-  overflow-x: scroll;
   height: 200px;
   width: 100%;
   padding: 0 3px;
   margin: 10px 0;
-  border: 1px solid #000000;
 }
 
 .thumbnail-list {
@@ -56,6 +53,6 @@ h2 {
   padding-left: 26px;
 }
 
-.navbar{
+.navbar {
   background-color:#ffba00;
 }

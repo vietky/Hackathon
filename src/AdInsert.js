@@ -114,14 +114,14 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <form className="form-horizontal form-input">
+        <form className="form-horizontal">
           {this.state.message.length > 0 &&
-            (<div className="alert alert-primary" role="alert">
+            (<div className="alert alert-primary alert-content" role="alert">
               {this.state.message}
             </div>)
           }
           {this.state.errorMessage.length > 0 &&
-            (<div className="alert alert-primary" role="alert">
+            (<div className="alert alert-error alert-content" role="alert">
               {this.state.errorMessage}
             </div>)
           }
@@ -146,13 +146,13 @@ class App extends Component {
             </div>
           </div>
           <Recorder data={this.state.descriptionRecordUrl} onRecorded={this.onDescriptionRecorded} />
-          <hr/>
+          <hr />
           <div className="form-group">
             <div className="col-sm-12">
-              <button type="submit" onClick={this.onSubmit} className="btn btn-primary btn-submit float-right">Submit</button>
+              <button className="btn btn-submit float-right">Clear</button>
             </div>
             <div className="col-sm-12">
-              <button type="submit" onClick={this.onSubmit} className="btn text-dred btn-submit float-right">Cancle</button>
+              <button type="submit" onClick={this.onSubmit} className="btn btn-primary float-right">Submit</button>
             </div>
           </div>
         </form>
