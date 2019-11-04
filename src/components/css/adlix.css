@@ -31,7 +31,7 @@
 #category {
    padding-bottom: 10px;
    color: white;
-   background-image: url('./images/bg-xe.png');
+   background-image: url('/images/bg-xe.png');
 }
 
 #category > .row {
@@ -195,25 +195,25 @@
 }
 
 .oto__icon{
-   background-image: url('./images/icon-xe-oto.png');
+   background-image: url('/images/icon-xe-oto.png');
 }
 
 .xe-may__icon{
-   background-image: "./images/icon-xe-oto.png"
+   background-image: "/images/icon-xe-oto.png"
 }
 
 .xe-tai__icon{
-   background-image: "./images/icon-xe-oto.png"
+   background-image: "/images/icon-xe-oto.png"
 }
 
 .xe-dien__icon{
-   background-image: "./images/icon-xe-oto.png"
+   background-image: "/images/icon-xe-oto.png"
 }
 
 .xe-la__icon{
-   background-image: "./images/icon-xe-oto.png"
+   background-image: "/images/icon-xe-oto.png"
 }
 
 .phu-tung__icon{
-   background-image: "./images/icon-xe-oto.png"
+   background-image: "/images/icon-xe-oto.png"
 }

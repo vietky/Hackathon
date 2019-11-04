@@ -5,18 +5,10 @@ import AdView from './AdView';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from 'reactstrap';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -35,24 +27,14 @@ export default function BasicExample() {
   return (
     <div className="container">
       <Router>
-        <Navbar className="navbar" color="light" light expand="md">
-          <NavbarBrand href="/">Sugar</NavbarBrand>
-          <NavbarToggler onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/">AdList</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/adview">AdView</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/adinsert">AdInsert</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-
+        <nav id="nav-main" className="navbar fixed-top navbar-light bg-main">
+          <Link to="/">
+            <img id="img-logo" src="/images/logo.png" alt="Responsive image" height="30" />
+          </Link>
+          <Link className="navbar-brand no-padding no-margin" to="/adview">
+            <button id="btn-post" className="btn btn-warn">ĐĂNG TIN</button>
+          </Link>
+        </nav>
         {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
@@ -72,6 +54,6 @@ export default function BasicExample() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </div >
   );
 }
