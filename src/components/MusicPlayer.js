@@ -1,12 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Audio from './Audio';
 import './css/adlix.css';
 
 class MusicPlayer extends React.Component {
-  // constructor(props) {
-  //   super(props)
+  constructor(props) {
+    super(props)
+    this.propTypes = {
+      track: PropTypes.object,
+      onTrackEnded: PropTypes.func,
+    }
+    this.onTrackEnded = this.onTrackEnded.bind(this);
+  }
 
-  // }
+  componentDidMount() {
+    // console.log('didmount', this.props.track);
+    if (this.props.track.id > -1) {
+      this.player.audioEl.play()
+    }
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.track.id !== prevProps.track.id) {
+      this.player.audioEl.play();
+    }
+  }
+
+  onTrackEnded(e) {
+    this.props.onTrackEnded(e)
+  }
 
   render() {
     return (
@@ -20,10 +41,10 @@ class MusicPlayer extends React.Component {
             </div>
           </div>
           <div id="player__content" className="col-8">
-            <p id="player__content__title">TOYOTA VIOS 2019 MỚI NHIỀU ƯU ĐÃI GIÁ CỰC SỐC</p>
-            <p id="player__content__price" className="text-dred">465.000.000 đ</p>
+            <p id="player__content__title">{this.props.track.title}</p>
+            <p id="player__content__price" className="text-dred">{this.props.track.price}</p>
           </div>
-          <Audio />
+          <Audio src={this.props.track.voice_description} ref={c => (this.player = c)} onEnded={this.onTrackEnded} />
         </div>
       </div>
     );
