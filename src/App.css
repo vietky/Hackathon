@@ -1,3 +1,6 @@
+.clickable {
+  cursor:pointer;
+}
 
 .alert-content {
   margin-top: 5px;
