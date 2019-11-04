@@ -20,6 +20,23 @@ html > body {
    margin: 0;
 }
 
+.no-border-left {
+   border-left: none;
+}
+
+.no-border-right {
+   border-right: none;
+}
+
+.bg-white {
+   background-color: white;
+}
+
+.no-outline,
+.no-outline:focus {
+   outline: none;
+}
+
 .just-center-middle {
    margin: 0 auto;
    display: table;

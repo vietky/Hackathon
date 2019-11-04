@@ -29,7 +29,7 @@ class Upload extends React.Component {
             {imageList}
           </ul>
         </div>
-        <input className="" type="file" onChange={this.handleChange} multiple />
+        <input className="" type="file" onChange={this.handleChange} multiple accept="image/png" />
       </div>
     );
   }
