@@ -25,10 +25,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(window.location.pathname);
-    console.log(this.state.ad);
-    console.log(this.state.images);
-
     if (this.state.ad !== {}) {
       return (
         <div className="App">
@@ -78,7 +74,7 @@ class App extends Component {
               <div>
                 <AudioPlayer
                   autoPlay
-                  src="https://storage.googleapis.com/sugar-maroon/records/41c894e0-feb9-11e9-a854-5572835ffc4c"
+                  src={this.state.ad.voice_description}
                   onPlay={e => console.log("onPlay")}
                 />
               </div>
