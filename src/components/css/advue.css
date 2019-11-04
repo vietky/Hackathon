@@ -111,3 +111,11 @@
    cursor: pointer;
    color: rgb(51, 101, 156);
 }
+
+.d-block {
+   height: 320px;
+}
+
+.toggle-play-button{
+   background-color:#ffba00 !important;
+}
