@@ -7,7 +7,7 @@ import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <Row>
           <Col>
             <div>
