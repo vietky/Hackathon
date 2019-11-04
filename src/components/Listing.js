@@ -58,6 +58,7 @@ class Listing extends Component {
     }
     return (
       <div className="Listing">
+
         <MusicPlayer track={playingTrack} onTrackEnded={this.onTrackEnded} />
         <ListGroup>
           {this.state.tracks.map((listitem, index) => (
