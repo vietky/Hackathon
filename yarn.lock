@@ -6419,6 +6419,11 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
+node-fetch@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+
 node-forge@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.0.tgz#d624050edbb44874adca12bb9a52ec63cb782579"
@@ -8313,6 +8318,11 @@ realpath-native@^1.1.0:
   integrity sha512-wlgPA6cCIIg9gKz0fgAPjnzh4yR/LnXovwuo9hvyGvx3h8nX4+/iLZplfUWasXpqD8BdnGnP5njOFjkUwPzvjA==
   dependencies:
     util.promisify "^1.0.0"
+
+recordrtc@^5.5.8:
+  version "5.5.8"
+  resolved "https://registry.yarnpkg.com/recordrtc/-/recordrtc-5.5.8.tgz#46eaf3500651701fda13a3d5826270270f9178a9"
+  integrity sha512-+BzbllHyL6Q8gAuaqjO8RdqofL4C6yI670hicMaUW/0dDsKHeKyz0S4M+n7sHnr4dP0LGWqcod6gazRMtXob6A==
 
 recursive-readdir@2.2.2:
   version "2.2.2"
