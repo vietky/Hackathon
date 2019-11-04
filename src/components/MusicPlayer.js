@@ -19,8 +19,10 @@ class MusicPlayer extends React.Component {
   }
   componentDidUpdate(prevProps) {
     if (this.props.track.id !== prevProps.track.id) {
-      if (this.player && this.player.audioEl) {
+      if (this.props.track && this.props.track.voice_description) {
         this.player.audioEl.play();
+      } else {
+        this.props.onTrackEnded();
       }
     }
   }

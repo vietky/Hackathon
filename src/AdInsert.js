@@ -131,9 +131,9 @@ class App extends Component {
             <div className="col-sm-9 input-group">
               <input type="text" className="form-control no-border-right" id="inputTitle" placeholder="Title"
                 value={this.state.title} onChange={this.onTitleChanged} />
-              <div class="input-group-append">
-                <button type="button" class="input-group-text no-border-left bg-white no-outline">
-                  <img src="./images/icon-recorder-voice.svg" width="20" />
+              <div className="input-group-append">
+                <button type="button" className="input-group-text no-border-left bg-white no-outline">
+                  <img alt="" src="./images/icon-recorder-voice.svg" width="20" />
                 </button>
               </div>
             </div>

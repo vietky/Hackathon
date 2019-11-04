@@ -128,7 +128,7 @@ class AdListing extends Component {
         {/* <!-- AD LISTING --> */}
         <div id="ad-listing" className="container-fluid">
           {this.state.tracks.map((item, index) => (
-            <Ad item={item} key={index} />
+            <Ad item={item} playingTrack={playingTrack} key={index} />
           ))}
 
         </div>

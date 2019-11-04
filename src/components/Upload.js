@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 class Upload extends React.Component {
   constructor(props) {
     super(props)
-    this.propTypes = {
-      onSelected: PropTypes.func,
-    }
+
     this.handleChange = this.handleChange.bind(this)
   }
   async handleChange(event) {
@@ -33,6 +31,10 @@ class Upload extends React.Component {
       </div>
     );
   }
+}
+
+Upload.propTypes = {
+  onSelected: PropTypes.func,
 }
 
 export default Upload
