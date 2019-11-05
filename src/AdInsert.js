@@ -113,15 +113,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div id="ad-insert">
         <form className="form-horizontal">
           {this.state.message.length > 0 &&
-            (<div className="alert alert-primary alert-content" role="alert">
+            (<div className="alert alert-primary" role="alert">
               {this.state.message}
             </div>)
           }
           {this.state.errorMessage.length > 0 &&
-            (<div className="alert alert-error alert-content" role="alert">
+            (<div className="alert alert-error" role="alert">
               {this.state.errorMessage}
             </div>)
           }
@@ -129,7 +129,7 @@ class App extends Component {
           <div className="form-group row">
             <label htmlFor="inputTitle" className="control-label col-sm-3 col-form-label">Title</label>
             <div className="col-sm-9 input-group">
-              <input type="text" className="form-control no-border-right" id="inputTitle" placeholder="Title"
+              <input type="text" className="form-control no-border-right no-shadow" id="inputTitle"
                 value={this.state.title} onChange={this.onTitleChanged} />
               <div className="input-group-append">
                 <button type="button" className="input-group-text no-border-left bg-white no-outline">
@@ -140,19 +140,24 @@ class App extends Component {
           </div>
           <div className="form-group row">
             <label htmlFor="inputPrice" className="control-label col-sm-3 col-form-label">Price</label>
-            <div className="col-sm-9">
-              <input type="text" className="form-control" id="inputPrice" placeholder="Price"
+            <div className="col-sm-9 input-group">
+              <input type="text" className="form-control no-border-right no-shadow" id="inputPrice" placeholder="$"
                 value={this.state.price} onChange={this.onPriceChanged} />
+              <div className="input-group-append">
+                <button type="button" className="input-group-text no-border-left bg-white no-outline pr-3">
+                  $
+                </button>
+              </div>
             </div>
           </div>
           <Recorder data={this.state.descriptionRecordUrl} onRecorded={this.onDescriptionRecorded} />
           <hr />
-          <div className="form-group">
-            <div className="col-sm-12">
-              <button className="btn btn-submit float-right">Clear</button>
+          <div className="form-group row">
+            <div className="col-6">
+              <button className="btn btn-light dp-block mr-auto no-shadow">Clear</button>
             </div>
-            <div className="col-sm-12">
-              <button type="submit" onClick={this.onSubmit} className="btn btn-primary float-right">Submit</button>
+            <div className="col-6">
+              <button type="submit" onClick={this.onSubmit} className="btn btn-info no-shadow no-outline ml-auto dp-block">Submit</button>
             </div>
           </div>
         </form>

@@ -27,8 +27,8 @@ export default function BasicExample() {
           <Link to="/">
             <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
           </Link>
-          <Link className="navbar-brand no-padding no-margin" to="/adinsert">
-            <button id="btn-post" className="btn btn-warn">ĐĂNG TIN</button>
+          <Link to="/adinsert">
+            <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
           </Link>
         </div>
       </nav>
@@ -40,6 +40,7 @@ export default function BasicExample() {
           of them to render at a time
         */}
       <div className="container">
+        <div id="page-content">
         <Switch>
           <Route exact path="/">
             <AdListing />
@@ -51,6 +52,7 @@ export default function BasicExample() {
             <AdInsert />
           </Route>
         </Switch>
+        </div>
       </div >
     </Router>
   );
