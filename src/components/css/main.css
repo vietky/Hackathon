@@ -1,16 +1,32 @@
+@import "/fonts/Verdana.ttf";
 
 html > body * {
    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bold;
 }
 
 html > body {
    /* For fixed navbar */
    padding-top: 45px;
+   background-color: #f4f4f4;
 }
 
 
 .text-dred {
-   color: #c90927;
+   color: #be0924;
+}
+
+.text-right {
+   text-align: right;
+}
+
+.btn-dwarn {
+   background-color: #fc9807;
+   color: #fff;
+}
+.btn-dlight {
+   background-color: #e2e2e2;
+   color: #333;
 }
 
 .no-padding {
@@ -37,6 +53,15 @@ html > body {
    outline: none;
 }
 
+.no-shadow,
+.no-shadow:focus {
+   box-shadow: none;
+}
+
+.dp-block {
+   display: block;
+}
+
 .just-center-middle {
    margin: 0 auto;
    display: table;
@@ -51,9 +76,35 @@ html > body {
    background-color: #ffba00 !important;
 }
 
+.container {
+   padding: 0;
+}
+
+@media (max-width: 720px) {
+   .container {
+      max-width: unset;
+   }
+}
+
+@media (min-width: 720px) {
+   .container {
+      padding: 0 5%;
+   }
+}
+
+.fmt-price::before {
+   content: "$";
+}
+
 #nav-main {
    height: 45px;
-   padding: 3px;
+   padding: 3px 15px;
+}
+
+@media (min-width: 720px) {
+   #nav-main > div:nth-of-type(1) {
+      padding: 0 5.5%;
+   }
 }
 
 #nav-main > .navbar-toggler {
@@ -61,9 +112,12 @@ html > body {
 }
 
 #btn-post {
-   font-size: 13px;
-   background-color: #fc9807;
-   color: #fff;
+   font-weight: bold;
    padding: 3px 6px;
-   margin-right: 10px;
+}
+
+#page-content {
+   background-color: white;
+   border: 1px solid #e5e5e5;
+   border-top: none;
 }

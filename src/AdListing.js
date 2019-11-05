@@ -138,31 +138,31 @@ class AdListing extends Component {
         {/* <!-- LIST CATEGORY --> */}
         <div id="category" className="container-fluid">
           <div className="row text-center flex-nowrap">
-            <div className="col-sm-3">
+            <div className="col">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-oto.png')` }}></div>
               <span className="category-label">Car</span>
             </div>
-            <div className="col-sm-3">
+            <div className="col">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-may.png')` }}></div>
               <span className="category-label">Motobike</span>
             </div>
-            <div className="col-sm-3">
+            <div className="col">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-tai.png')` }}></div>
               <span className="category-label">Truck</span>
             </div>
-            <div className="col-sm-3">
+            <div className="col">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-dien.png')` }}></div>
               <span className="category-label">Tram</span>
             </div>
-            <div className="col-sm-3">
+            <div className="col">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-dien.png')` }}></div>
               <span className="category-label">Bicycle</span>
             </div>
-            <div className="col-sm-3">
+            <div className="col">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-la.png')` }}></div>
               <span className="category-label">Other vehicles</span>
             </div>
-            <div className="col-sm-3">
+            <div className="col">
               <div className="category-icon" style={{ backgroundImage: `url('./images/icon-xe-phutung.png')` }}></div>
               <span className="category-label">Spare parts</span>
             </div>

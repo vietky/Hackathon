@@ -10,7 +10,7 @@ class Ad extends Component {
   render() {
     return (
       <div className="Ad">
-        <Link to={"/adview/" + this.props.item.id} >
+        <Link to={"/adview/" + this.props.item.id}>
           <div className="ad-itemx flex-nowrap row">
             <div className="ad-itemx__image col-4">
               <img src={this.props.item.images.length > 0 ? this.props.item.images[0] : ''} alt="" />
@@ -26,8 +26,8 @@ class Ad extends Component {
                 {this.props.item.title}
               </p>
               <div className="ad-itemx__detail-bottom">
-                <div className="ad-itemx__detail__price text-dred">
-                  {this.props.item.price}
+                <div className="ad-itemx__detail__price text-dred fmt-price">
+                  {Number(this.props.item.price).toLocaleString('en')}
                 </div>
                 <div className="ad-itemx__detail__tilo">
                   <img width="20" src="/images/icon-bag.svg" alt="icon-bag" />

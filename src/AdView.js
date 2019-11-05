@@ -31,9 +31,9 @@ class App extends Component {
           {/* AD PHOTOS */}
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                {this.state.images.map((img, index) => (
+                  <li data-target="#carouselExampleIndicators" data-slide-to={index} className={index}></li>
+                ))}
             </ol>
             <div className="carousel-inner">
               {this.state.images.map((img, index) => (
@@ -59,7 +59,7 @@ class App extends Component {
               {/* <!-- AD TITLE --> */}
               <h3 id="ad-title">{this.state.ad.title}</h3>
               {/* <!-- AD PRICE --> */}
-              <span id="ad-price" className="text-dred">{this.state.ad.price}</span>
+              <span id="ad-price" className="text-dred fmt-price">{Number(this.state.ad.price || 0).toLocaleString('en')}</span>
               {/* <!-- AD SAVE --> */}
               <button id="ad-save" className="btn btn-light text-dred" type="button">
                 Save&nbsp;

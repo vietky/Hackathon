@@ -1,19 +1,60 @@
+#ad-insert {
+   padding: 0 15px;
+   padding-top: 14px;
+   font-size: 0.9rem;
+}
+
+#ad-insert button {
+   font-size: 1em;
+   font-weight: bold;
+}
+
 .thumbnail-container {
    border: 1px dashed #454 !important;
    border-radius: 5px !important;
    overflow-x: auto !important;
 }
 
+#choose-file-btn {
+   position: relative;
+   transition: color 0s;
+}
+#choose-file-btn:hover {
+   filter: brightness(.93);
+}
+#choose-file-btn input {
+   position: absolute;
+   visibility: hidden;
+   width: 0;
+}
+#choose-file-btn svg {
+   fill: black;
+   width: 25px;
+}
+
+#ad-insert .col-form-label {
+   text-align: right;
+}
+
+@media (max-width: 576px) {
+   #ad-insert .col-form-label {
+      text-align: unset;
+   }
+}
+
 #recorder .recorder-btn {
    width: 40px;
    height: 40px;
    border-radius: 50%;
+   border-style: outset;
+   background-color: rgba(211, 210, 210, 0.746);
    outline: none;
    margin-right: 10px;
 }
 
 #recorder .recorder-btn.disabled {
-   fill: grey !important;
+   fill: rgba(148, 147, 147, 0.746) !important;
+   border-style: solid;
    cursor: not-allowed;
 }
 
@@ -21,7 +62,17 @@
    fill: brown;
 }
 
-#recorder button img {
-   background-size: cover;
-   background-repeat: no-repeat;
+#recorder #recorder-btn-end svg {
+   width: 25px;
+   height: 25px;
+   transform: translate(-50%, -3%);
+}
+
+#recorder .recorder-btn svg {
+   position: relative;
+   top: 50%;
+   left: 50%;
+   width: 30px;
+   height: 30px;
+   transform: translate(-50%, 0);
 }
