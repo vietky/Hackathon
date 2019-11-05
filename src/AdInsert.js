@@ -114,42 +114,45 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <form className="form-horizontal form-input">
+        <form className="form-horizontal">
           {this.state.message.length > 0 &&
-            (<div className="alert alert-primary" role="alert">
+            (<div className="alert alert-primary alert-content" role="alert">
               {this.state.message}
             </div>)
           }
           {this.state.errorMessage.length > 0 &&
-            (<div className="alert alert-primary" role="alert">
+            (<div className="alert alert-error alert-content" role="alert">
               {this.state.errorMessage}
             </div>)
           }
           <Upload data={this.state.images} onSelected={this.onImagesSelected} />
-          <div className="form-group">
-            <div className="row">
-              <div className="col-sm-2">
-                <label htmlFor="inputTitle" className="control-label">Title</label>
-              </div>
-              <div className="col-sm-10">
-                <input type="text" className="form-control" id="inputTitle" placeholder="Title"
-                  value={this.state.title} onChange={this.onTitleChanged} />
+          <div className="form-group row">
+            <label htmlFor="inputTitle" className="control-label col-sm-3 col-form-label">Title</label>
+            <div className="col-sm-9 input-group">
+              <input type="text" className="form-control no-border-right" id="inputTitle" placeholder="Title"
+                value={this.state.title} onChange={this.onTitleChanged} />
+              <div className="input-group-append">
+                <button type="button" className="input-group-text no-border-left bg-white no-outline">
+                  <img alt="" src="./images/icon-recorder-voice.svg" width="20" />
+                </button>
               </div>
             </div>
           </div>
-          <Recorder data={this.state.descriptionRecordUrl} onRecorded={this.onDescriptionRecorded} />
-          <div className="row">
-            <div className="col-sm-2">
-              <label htmlFor="inputPrice" className="control-label">Price</label>
-            </div>
-            <div className="col-sm-10">
+          <div className="form-group row">
+            <label htmlFor="inputPrice" className="control-label col-sm-3 col-form-label">Price</label>
+            <div className="col-sm-9">
               <input type="text" className="form-control" id="inputPrice" placeholder="Price"
                 value={this.state.price} onChange={this.onPriceChanged} />
             </div>
           </div>
+          <Recorder data={this.state.descriptionRecordUrl} onRecorded={this.onDescriptionRecorded} />
+          <hr />
           <div className="form-group">
             <div className="col-sm-12">
-              <button type="submit" onClick={this.onSubmit} className="btn btn-primary btn-submit">Submit</button>
+              <button className="btn btn-submit float-right">Clear</button>
+            </div>
+            <div className="col-sm-12">
+              <button type="submit" onClick={this.onSubmit} className="btn btn-primary float-right">Submit</button>
             </div>
           </div>
         </form>

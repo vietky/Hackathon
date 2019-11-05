@@ -21,16 +21,17 @@ import {
 
 export default function BasicExample() {
   return (
-    <div className="container">
-      <Router>
-        <nav id="nav-main" className="navbar fixed-top navbar-light bg-main">
+    <Router>
+      <nav id="nav-main" className="navbar fixed-top navbar-light bg-main">
+        <div className="container">
           <Link to="/">
             <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
           </Link>
           <Link className="navbar-brand no-padding no-margin" to="/adinsert">
             <button id="btn-post" className="btn btn-warn">ĐĂNG TIN</button>
           </Link>
-        </nav>
+        </div>
+      </nav>
         {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
@@ -38,6 +39,7 @@ export default function BasicExample() {
           you have multiple routes, but you want only one
           of them to render at a time
         */}
+      <div className="container">
         <Switch>
           <Route exact path="/">
             <AdListing />
@@ -49,7 +51,7 @@ export default function BasicExample() {
             <AdInsert />
           </Route>
         </Switch>
-      </Router>
-    </div >
+      </div >
+    </Router>
   );
 }

@@ -8,7 +8,7 @@ const DefaultTrack = {
   "id": -1,
   "title": "",
   "description": "auto-generated",
-  "voice_description": "https://storage.googleapis.com/sugar-maroon/records/e435a990-fe58-11e9-b9da-293c4b0d10c5",
+  "voice_description": "",
   "price": "",
   "images": [
     "https://storage.googleapis.com/sugar-maroon/images/e1c60920-fe58-11e9-b9da-293c4b0d10c5",
@@ -25,8 +25,13 @@ class AdListing extends Component {
     this.state = {
       tracks: [],
       selectedIndex: -1,
+      playing: false,
     }
     this.onTrackEnded = this.onTrackEnded.bind(this);
+    this.onPauseClicked = this.onPauseClicked.bind(this);
+    this.onPlayClicked = this.onPlayClicked.bind(this);
+    this.onNextClicked = this.onNextClicked.bind(this);
+    this.onPreviousClicked = this.onPreviousClicked.bind(this);
   }
 
   componentDidMount() {
@@ -43,17 +48,63 @@ class AdListing extends Component {
 
   onTrackEnded() {
     let currentIndex = this.state.selectedIndex;
+    let playing = this.state.playing;
     if (currentIndex < this.state.tracks.length) {
       currentIndex += 1;
+    }
+    if (currentIndex >= this.state.tracks.length) {
+      playing = false;
+    }
+    this.setState({
+      selectedIndex: currentIndex,
+      playing,
+    });
+  }
+
+  onPauseClicked() {
+    this.setState({
+      playing: false,
+    })
+  }
+
+  onNextClicked() {
+    let currentIndex = this.state.selectedIndex;
+    currentIndex += 1;
+    console.log('currentIndex', currentIndex);
+    if (currentIndex >= this.state.tracks.length) {
+      return
     }
     this.setState({
       selectedIndex: currentIndex,
     });
   }
 
+  onPreviousClicked() {
+    let currentIndex = this.state.selectedIndex;
+    currentIndex -= 1;
+    console.log('currentIndex', currentIndex);
+    if (currentIndex < 0) {
+      return
+    }
+    this.setState({
+      selectedIndex: currentIndex,
+    });
+  }
+
+  onPlayClicked() {
+    let currentIndex = this.state.selectedIndex;
+    if (currentIndex >= this.state.tracks.length) {
+      currentIndex = 0;
+    }
+    this.setState({
+      currentIndex,
+      playing: true,
+    })
+  }
+
   render() {
     let playingTrack = DefaultTrack;
-    if (this.state.selectedIndex > -1 && this.state.selectedIndex < this.state.tracks.length) {
+    if (this.state.playing && this.state.selectedIndex > -1 && this.state.selectedIndex < this.state.tracks.length) {
       playingTrack = this.state.tracks[this.state.selectedIndex]
     }
 
@@ -121,19 +172,23 @@ class AdListing extends Component {
         {/* <!-- PLAYER HERE --> */}
         <div id="player" className="container-fluid bg-main">
           <div className="row flex-nowrap">
-            <MusicPlayer track={playingTrack} onTrackEnded={this.onTrackEnded} />
+            <MusicPlayer playing={this.state.playing}
+              track={playingTrack}
+              onTrackEnded={this.onTrackEnded}
+              onPauseClicked={this.onPauseClicked}
+              onPlayClicked={this.onPlayClicked}
+              onNextClicked={this.onNextClicked}
+              onPreviousClicked={this.onPreviousClicked}
+            />
           </div>
         </div>
 
         {/* <!-- AD LISTING --> */}
         <div id="ad-listing" className="container-fluid">
           {this.state.tracks.map((item, index) => (
-            <Ad item={item} key={index} />
+            <Ad item={item} playingTrack={playingTrack} key={index} />
           ))}
-
         </div>
-
-
       </div>
     )
   }
