@@ -33,7 +33,9 @@ async function checkMicrophone(cb) {
 
 function record(microphone) {
   var options = {
+    recorderType: StereoAudioRecorder,
     type: 'audio',
+    mimeType: 'audio/wav',
     numberOfAudioChannels: isEdge ? 1 : 2,
     checkForInactiveTracks: true,
     bufferSize: 16384
