@@ -77,6 +77,7 @@ class Recorder extends React.Component {
       recording: false,
       playing: false,
       errorMessage: '',
+      microphone: null,
       uploaded: false
     });
   }
@@ -85,14 +86,14 @@ class Recorder extends React.Component {
     e.preventDefault();
     this.setState({ started: true });
 
-
     try {
       await checkMicrophone((microphone) => {
         console.log("record");
         this.setState({
           recording: true,
           playing: false,
-        })
+          microphone,
+        });
         record(microphone);
       })
     }
@@ -110,10 +111,11 @@ class Recorder extends React.Component {
 
     recorder.stopRecording(() => {
       self.props.onRecorded(recorder);
+      self.state.microphone.stop();
       self.setState({
         recording: false,
         playing: false,
-        uploaded: true
+        uploaded: true,
       });
     });
   }
