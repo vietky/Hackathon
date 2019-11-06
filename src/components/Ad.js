@@ -41,7 +41,7 @@ class Ad extends Component {
         {
           this.props.item.voice_description && this.props.item.id === this.props.playingTrack.id ?
             (
-            <PlayMusic playList={true} url={this.props.item.voice_description}/>
+              <PlayMusic playList={true} url={this.props.item.voice_description}/>
               // <svg className="ad-itemx__detail-player active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M199.9 416h-63.8c-4.5 0-8.1-3.6-8.1-8V104c0-4.4 3.6-8 8.1-8h63.8c4.5 0 8.1 3.6 8.1 8v304c0 4.4-3.6 8-8.1 8zM375.9 416h-63.8c-4.5 0-8.1-3.6-8.1-8V104c0-4.4 3.6-8 8.1-8h63.8c4.5 0 8.1 3.6 8.1 8v304c0 4.4-3.6 8-8.1 8z"></path></svg>
             ) :
             (

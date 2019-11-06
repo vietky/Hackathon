@@ -36,6 +36,10 @@ html > body {
    margin: 0;
 }
 
+.no-border {
+   border: none;
+}
+
 .no-border-left {
    border-left: none;
 }
