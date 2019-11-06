@@ -27,9 +27,15 @@ export default function BasicExample() {
           <Link to="/">
             <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
           </Link>
-          <Link to="/adinsert">
-            <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
-          </Link>
+
+          <div>
+            <small className="nav-main__lang text-light">VI</small>
+            <small className="nav-main__lang text-light">EN</small>
+            <small className="nav-main__lang text-light">MY</small>
+            <Link to="/adinsert">
+              <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
+            </Link>
+          </div>
         </div>
       </nav>
         {/*

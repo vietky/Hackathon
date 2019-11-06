@@ -11,7 +11,6 @@ html > body {
    background-color: #f4f4f4;
 }
 
-
 .text-dred {
    color: #be0924;
 }
@@ -119,9 +118,28 @@ html > body {
    border: none;
 }
 
+.nav-main__lang {
+   font-size: .75rem;
+   cursor: pointer;
+   margin-right: 20px;
+}
+.nav-main__lang:hover {
+   color: rgb(230, 230, 230) !important;
+}
+@media (max-width: 576px) {
+   .nav-main__lang {
+      margin-right: 10px;
+   }
+}
+
 #btn-post {
    font-weight: bold;
    padding: 3px 6px;
+   transition: color 0s;
+}
+#btn-post:hover {
+   color: white;
+   filter: brightness(0.95);
 }
 
 #page-content {
