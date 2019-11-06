@@ -36,7 +36,7 @@ class AdListing extends Component {
   }
 
   componentDidMount() {
-    fetch(`${config.backend_base_url}/api/ads/get-all`)
+    fetch(`${config.backend_base_url}/api/ads/search?lang=`+this.props.lang)
       .then(res => res.json())
       .then((data) => {
         this.setState({
@@ -104,6 +104,7 @@ class AdListing extends Component {
   }
 
   render() {
+    console.log("ad listing: ", this.props.lang)
     let playingTrack = DefaultTrack;
     if (this.state.playing && this.state.selectedIndex > -1 && this.state.selectedIndex < this.state.tracks.length) {
       playingTrack = this.state.tracks[this.state.selectedIndex]

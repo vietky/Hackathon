@@ -4,7 +4,7 @@ import AudioPlayer from "react-h5-audio-player";
 import './components/css/advue.css';
 import './components/css/main.css';
 
-class App extends Component {
+class AdView extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("lang: ", config.lang)
     if (this.state.ad !== {}) {
       return (
         <div className="App">
@@ -151,4 +152,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AdView;
