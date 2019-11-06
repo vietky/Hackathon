@@ -13,7 +13,7 @@ class Ad extends Component {
         <Link to={"/adview/" + this.props.item.id}>
           <div className="ad-itemx flex-nowrap row">
             <div className="ad-itemx__image col-4">
-              <img src={this.props.item.images.length > 0 ? this.props.item.images[0] : ''} alt="" />
+              <img src={this.props.item.images.length > 0 ? this.props.item.images[0] : '/images/no_images.jpeg'} alt="" />
               {
                 this.props.item.voice_description && this.props.item.id === this.props.playingTrack.id ?
                   (<svg className="ad-itemx__image-player active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M199.9 416h-63.8c-4.5 0-8.1-3.6-8.1-8V104c0-4.4 3.6-8 8.1-8h63.8c4.5 0 8.1 3.6 8.1 8v304c0 4.4-3.6 8-8.1 8zM375.9 416h-63.8c-4.5 0-8.1-3.6-8.1-8V104c0-4.4 3.6-8 8.1-8h63.8c4.5 0 8.1 3.6 8.1 8v304c0 4.4-3.6 8-8.1 8z"></path></svg>) :
