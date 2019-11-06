@@ -1,6 +1,7 @@
 #ad-insert {
    padding: 0 15px;
    padding-top: 14px;
+   padding-bottom: 5px;
    font-size: 0.9rem;
 }
 
@@ -13,6 +14,7 @@
    border: 1px dashed #454 !important;
    border-radius: 5px !important;
    overflow-x: auto !important;
+   cursor: copy;
 }
 
 #choose-file-btn {

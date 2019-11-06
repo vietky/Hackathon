@@ -27,7 +27,7 @@ class Upload extends React.Component {
     }
     return (
       <div className="form-group">
-        <div className="thumbnail-container">
+        <div className="thumbnail-container" onClick={this.chooseFile}>
           <ul className="thumbnail-list">
             {imageList}
           </ul>
