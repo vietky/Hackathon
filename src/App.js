@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import AdInsert from './AdInsert';
 import AdListing from './AdListing';
 import AdView from './AdView';
-import config from './config.js';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect
+  Link
 } from "react-router-dom";
 
 
