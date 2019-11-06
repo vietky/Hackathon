@@ -59,7 +59,12 @@ class App extends Component {
               {/* <!-- AD TITLE --> */}
               <h3 id="ad-title">{this.state.ad.title}</h3>
               {/* <!-- AD PRICE --> */}
-              <span id="ad-price" className="text-dred fmt-price">{Number(this.state.ad.price || 0).toLocaleString('en')}</span>
+              {
+                this.state.ad.price ?
+                <span id="ad-price" className="text-dred fmt-price">{Number(this.state.ad.price).toLocaleString('en')}</span>
+                :
+                ''
+              }
               {/* <!-- AD SAVE --> */}
               <button id="ad-save" className="btn btn-light text-dred" type="button">
                 Save&nbsp;

@@ -92,7 +92,12 @@ class MusicPlayer extends React.Component {
           </div>
           <div id="player__content" className="col-8">
             <p id="player__content__title">{this.props.track.title}</p>
-            <p id="player__content__price" className="text-dred">{this.props.track.price}</p>
+            {
+              this.props.track.price ?
+              <p id="player__content__price" className="text-dred fmt-price">{Number(this.props.track.price).toLocaleString('en')}</p>
+              :
+              ''
+            }
           </div>
           <Audio src={this.props.track.voice_description} ref={c => (this.player = c)} onEnded={this.onTrackEnded} />
         </div>

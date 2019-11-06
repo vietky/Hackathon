@@ -62,6 +62,10 @@ html > body {
    display: block;
 }
 
+.ps-relative {
+   position: relative;
+}
+
 .just-center-middle {
    margin: 0 auto;
    display: table;
@@ -118,6 +122,6 @@ html > body {
 
 #page-content {
    background-color: white;
-   border: 1px solid #e5e5e5;
+   /* border: 1px solid #e5e5e5; */
    border-top: none;
 }
