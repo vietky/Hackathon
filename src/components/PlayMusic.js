@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 class PlayMusic extends Component {
   state = {
-    play: false,
-    play1: false 
+    play: false
   }
 
   audio = new Audio(this.props.url)
