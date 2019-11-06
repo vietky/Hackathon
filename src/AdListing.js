@@ -27,6 +27,7 @@ class AdListing extends Component {
       tracks: [],
       selectedIndex: -1,
       playing: false,
+      lang: props.lang || 'vi',
     }
     this.onTrackEnded = this.onTrackEnded.bind(this);
     this.onPauseClicked = this.onPauseClicked.bind(this);
@@ -36,15 +37,29 @@ class AdListing extends Component {
   }
 
   componentDidMount() {
-    fetch(`${config.backend_base_url}/api/ads/search?lang=`+this.props.lang)
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({
-          tracks: data,
-          selectedIndex: 0,
-        });
-      })
-      .catch(console.log)
+    this.fetchData()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.lang !== this.state.lang) {
+      this.setState({
+        lang: nextProps.lang,
+      });
+      this.fetchData(nextProps.lang);
+    }
+  }
+
+  async fetchData(lang = this.state.lang) {
+    console.log("query ne ", lang)
+    fetch(`${config.backend_base_url}/api/ads/search?lang=` + lang)
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({
+        tracks: data,
+        selectedIndex: 0,
+      });
+    })
+    .catch(console.log)
   }
 
   onTrackEnded() {

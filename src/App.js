@@ -29,7 +29,7 @@ class App extends Component {
         referrer: null,
     };
 }
-  
+
   vi_lang = () => {
     console.log("vi")
     config.lang="vi"
