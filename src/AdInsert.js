@@ -7,7 +7,7 @@ import './App.css';
 
 const DefaultMessage = 'Find your ad insert status here';
 
-class App extends Component {
+class AdInsert extends Component {
   constructor() {
     super();
     this.onPriceChanged = this.onPriceChanged.bind(this);
@@ -169,4 +169,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AdInsert;

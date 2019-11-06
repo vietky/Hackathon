@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import AdInsert from './AdInsert';
 import AdListing from './AdListing';
 import AdView from './AdView';
@@ -19,47 +19,58 @@ import {
 // making sure things like the back button and bookmarks
 // work properly.
 
-export default function BasicExample() {
-  return (
-    <Router>
-      <nav id="nav-main" className="navbar fixed-top navbar-light bg-main">
-        <div className="container">
-          <Link to="/">
-            <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
-          </Link>
-
-          <div>
-            <small className="nav-main__lang text-light">EN</small>
-            <small className="nav-main__lang text-light">VI</small>
-            <small className="nav-main__lang text-light">MY</small>
-            <Link to="/adinsert">
-              <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
-            </Link>
-          </div>
-        </div>
-      </nav>
-        {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
-      <div className="container">
-        <div id="page-content">
-        <Switch>
-          <Route exact path="/">
-            <AdListing />
-          </Route>
-          <Route path="/adview">
-            <AdView />
-          </Route>
-          <Route path="/adinsert">
-            <AdInsert />
-          </Route>
-        </Switch>
-        </div>
-      </div >
-    </Router>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        lang: "vi"
+    };
 }
+
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <nav id="nav-main" className="navbar fixed-top navbar-light bg-main">
+            <div className="container">
+              <Link to="/">
+                <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
+              </Link>
+              <div>
+              <Link to="/">
+                <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "vi"})}>VI</small>
+              </Link>
+              <Link to="/">
+              <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "my"})} >MY</small>
+              </Link>
+              <Link to="/">
+              <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "mm"})} >MM</small>
+              </Link>
+                <Link to="/adinsert">
+                  <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
+                </Link>
+              </div>
+            </div>
+          </nav>
+          <div className="container">
+            <div id="page-content">
+              <Switch>
+                <Route exact path="/">
+                  <AdListing lang={this.state.lang}/>
+                </Route>
+                <Route path="/adview">
+                  <AdView />
+                </Route>
+                <Route path="/adinsert">
+                  <AdInsert />
+                </Route>
+              </Switch>
+            </div>
+          </div >
+        </Router>
+      </div>
+    );
+  }
+}
+
+export default App;
