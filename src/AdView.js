@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from './config.js';
 import AudioPlayer from "react-h5-audio-player";
 import './components/css/advue.css';
 import './components/css/main.css';
@@ -13,7 +14,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://dev-racer-252811.appspot.com/api/ads/' + window.location.pathname.split("adview/")[1])
+    fetch(`${config.backend_base_url}/api/ads/` + window.location.pathname.split("adview/")[1])
       .then(res => res.json())
       .then((data) => {
         this.setState({
