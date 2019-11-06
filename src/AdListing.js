@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from './config.js';
 import MusicPlayer from './components/MusicPlayer';
 import Ad from './components/Ad';
 import './components/css/adlix.css';
@@ -35,7 +36,7 @@ class AdListing extends Component {
   }
 
   componentDidMount() {
-    fetch('https://dev-racer-252811.appspot.com/api/ads/get-all')
+    fetch(`${config.backend_base_url}/api/ads/get-all`)
       .then(res => res.json())
       .then((data) => {
         this.setState({
