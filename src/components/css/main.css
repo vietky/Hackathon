@@ -118,13 +118,18 @@ html > body {
    border: none;
 }
 
+#nav-main a {
+   text-decoration: none;
+}
+
 .nav-main__lang {
    font-size: .75rem;
    cursor: pointer;
    margin-right: 20px;
+   color: white;
 }
 .nav-main__lang:hover {
-   color: rgb(230, 230, 230) !important;
+   color: rgb(240, 240, 240) !important;
 }
 @media (max-width: 576px) {
    .nav-main__lang {

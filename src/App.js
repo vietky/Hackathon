@@ -38,13 +38,13 @@ class App extends Component {
               </Link>
               <div>
               <Link to="/">
-                <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "vi"})}>VI</small>
+                <small className="nav-main__lang" onClick={() => this.setState({lang: "vi"})}>VI</small>
               </Link>
               <Link to="/">
-              <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "my"})} >MY</small>
+              <small className="nav-main__lang" onClick={() => this.setState({lang: "my"})}>MY</small>
               </Link>
               <Link to="/">
-              <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "mm"})} >MM</small>
+              <small className="nav-main__lang" onClick={() => this.setState({lang: "mm"})}>MM</small>
               </Link>
                 <Link to="/adinsert">
                   <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
