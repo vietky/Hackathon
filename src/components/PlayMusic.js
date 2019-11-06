@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class PlayMusic extends Component {
   state = {
     play: false,
+    play1: false 
   }
 
   audio = new Audio(this.props.url)
@@ -11,9 +12,18 @@ class PlayMusic extends Component {
     this.setState({ play: !this.state.play }, () => {
       this.state.play ? this.audio.play() : this.audio.pause();
     });
+
+    this.audio.addEventListener('ended', () => {
+      console.log("end audio")
+      this.setState({ play: false }, () => {
+      this.audio.pause();
+      });
+    }, false);
   }
 
+
   render() {
+    console.log("nenene: ", this.state.play)
     if (this.props.playList || this.state.play) {
       return (
         // show pause icon

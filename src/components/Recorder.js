@@ -162,6 +162,10 @@ class Recorder extends React.Component {
             !this.props.uploaded &&
             (<p className="recorder-status no-margin">saving...</p>)
           }
+          {
+            this.state.recording &&
+            (<p className="recorder-status no-margin">recording...</p>)
+          }
           </button>
           {/* <button id="recorder-btn-play" title="Continue record" className={`recorder-btn`}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M199.9 416h-63.8c-4.5 0-8.1-3.6-8.1-8V104c0-4.4 3.6-8 8.1-8h63.8c4.5 0 8.1 3.6 8.1 8v304c0 4.4-3.6 8-8.1 8zM375.9 416h-63.8c-4.5 0-8.1-3.6-8.1-8V104c0-4.4 3.6-8 8.1-8h63.8c4.5 0 8.1 3.6 8.1 8v304c0 4.4-3.6 8-8.1 8z" /></svg>
