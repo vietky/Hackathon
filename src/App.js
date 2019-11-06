@@ -25,25 +25,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        navigate: false,
-        referrer: null,
+        lang: "vi"
     };
 }
-
-  vi_lang = () => {
-    console.log("vi")
-    config.lang="vi"
-  }
-
-  my_lang = () => {
-    console.log("my")
-    config.lang="my"
-  }
-
-  mm_lang = () => {
-    console.log("mm")
-    config.lang="mm"
-  }
 
   render() {
     return (
@@ -55,34 +39,26 @@ class App extends Component {
                 <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
               </Link>
               <div>
-              <Link to="/vi">
-                <small className="nav-main__lang text-light" onClick={this.vi_lang}>VI</small>
+              <Link to="/">
+                <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "vi"})}>VI</small>
               </Link>
-              <Link to="/my">
-              <small className="nav-main__lang text-light" onClick={this.my_lang} >MY</small>
+              <Link to="/">
+              <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "my"})} >MY</small>
               </Link>
-                <small className="nav-main__lang text-light" onClick={this.mm_lang} >MM</small>
+              <Link to="/">
+              <small className="nav-main__lang text-light" onClick={() => this.setState({lang: "mm"})} >MM</small>
+              </Link>
                 <Link to="/adinsert">
                   <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
                 </Link>
               </div>
             </div>
           </nav>
-          {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
           <div className="container">
             <div id="page-content">
               <Switch>
-                <Route exact path="/vi">
-                  <AdListing lang={"vi"}/>
-                </Route>
-                <Route exact path="/my">
-                  <AdListing lang={"my"}/>
+                <Route exact path="/">
+                  <AdListing lang={this.state.lang}/>
                 </Route>
                 <Route path="/adview">
                   <AdView />
@@ -100,49 +76,3 @@ class App extends Component {
 }
 
 export default App;
-
-// export default function BasicExample() {
-
-//   return (
-    // <Router>
-    //   <nav id="nav-main" className="navbar fixed-top navbar-light bg-main">
-    //     <div className="container">
-    //       <Link to="/">
-    //         <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
-    //       </Link>
-
-    //       <div>
-    //         <small className="nav-main__lang text-light" onClick={config.lang = "vi"} >VI</small>
-    //         <small className="nav-main__lang text-light">MY</small>
-    //         <small className="nav-main__lang text-light">MM</small>
-    //         <Link to="/adinsert">
-    //           <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
-    //         </Link>
-    //       </div>
-    //     </div>
-    //   </nav>
-    //     {/*
-    //       A <Switch> looks through all its children <Route>
-    //       elements and renders the first one whose path
-    //       matches the current URL. Use a <Switch> any time
-    //       you have multiple routes, but you want only one
-    //       of them to render at a time
-    //     */}
-    //   <div className="container">
-    //     <div id="page-content">
-    //     <Switch>
-    //       <Route exact path="/">
-    //         <AdListing />
-    //       </Route>
-    //       <Route path="/adview">
-    //         <AdView />
-    //       </Route>
-    //       <Route path="/adinsert">
-    //         <AdInsert />
-    //       </Route>
-    //     </Switch>
-    //     </div>
-    //   </div >
-    // </Router>
-//   );
-// }
