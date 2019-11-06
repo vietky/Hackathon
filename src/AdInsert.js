@@ -24,7 +24,8 @@ class App extends Component {
       price: '1000000',
       category: 5010,
       message: DefaultMessage,
-      errorMessage: ''
+      errorMessage: '',
+      uploaded: false,
     }
   }
 
@@ -68,7 +69,9 @@ class App extends Component {
   async onDescriptionRecorded(record) {
     try {
       const result = await SugarService.upload('records', record.getBlob());
-      console.log('onDescriptionRecorded ne', result);
+      this.state.uploaded = true;
+
+      console.log('onDescriptionRecorded uploaded: ', result);
       this.setState({
         descriptionRecordUrl: result.url,
         message: 'Done recording',
@@ -150,7 +153,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <Recorder data={this.state.descriptionRecordUrl} onRecorded={this.onDescriptionRecorded} />
+          <Recorder data={this.state.descriptionRecordUrl} onRecorded={this.onDescriptionRecorded} uploaded={this.state.uploaded} />
           <hr />
           <div className="form-group row">
             <div className="col-6">
