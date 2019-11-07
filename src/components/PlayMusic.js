@@ -1,29 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class PlayMusic extends Component {
-  state = {
-    play: false
+  constructor(props) {
+    super(props);
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
-  audio = new Audio(this.props.url)
-
-  togglePlay = () => {
-    this.setState({ play: !this.state.play }, () => {
-      this.state.play ? this.audio.play() : this.audio.pause();
-    });
-
-    this.audio.addEventListener('ended', () => {
-      console.log("end audio")
-      this.setState({ play: false }, () => {
-      this.audio.pause();
-      });
-    }, false);
+  togglePlay = (e) => {
+    e.preventDefault();
+    this.props.onPlayClicked(e);
   }
-
 
   render() {
-    console.log("nenene: ", this.state.play)
-    if (this.props.playList || this.state.play) {
+    if (this.props.playing) {
       return (
         // show pause icon
         <div onClick={this.togglePlay}>
@@ -39,6 +29,11 @@ class PlayMusic extends Component {
       )
     }
   }
+}
+
+PlayMusic.propTypes = {
+  playing: PropTypes.bool,
+  onPlayClicked: PropTypes.func,
 }
 
 export default PlayMusic;

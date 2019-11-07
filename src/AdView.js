@@ -34,7 +34,7 @@ class AdView extends Component {
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
               {this.state.images.map((img, index) => (
-                <li data-target="#carouselExampleIndicators" data-slide-to={index} className={index}></li>
+                <li data-target="#carouselExampleIndicators" key={index} data-slide-to={index} className={index}></li>
               ))}
             </ol>
             <div className="carousel-inner">

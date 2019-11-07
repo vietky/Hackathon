@@ -26,12 +26,14 @@ class AdListing extends Component {
     this.state = {
       tracks: [],
       selectedIndex: -1,
+      playAds: false,
       playing: false,
       lang: props.lang || 'vi',
     }
     this.onTrackEnded = this.onTrackEnded.bind(this);
     this.onPauseClicked = this.onPauseClicked.bind(this);
     this.onPlayClicked = this.onPlayClicked.bind(this);
+    this.onPlayAdClicked = this.onPlayAdClicked.bind(this);
     this.onNextClicked = this.onNextClicked.bind(this);
     this.onPreviousClicked = this.onPreviousClicked.bind(this);
   }
@@ -55,14 +57,23 @@ class AdListing extends Component {
       .then((data) => {
         this.setState({
           tracks: data,
-          selectedIndex: 0,
+          selectedIndex: -1,
         });
       })
       .catch(console.log)
   }
 
   onTrackEnded() {
+    if (this.state.playAds) {
+      this.setState({
+        selectedIndex: -1,
+        playing: false
+      });
+      return;
+    }
     let currentIndex = this.state.selectedIndex;
+    console.log('onTrackEnded currentIndex', currentIndex)
+
     let playing = this.state.playing;
     if (currentIndex < this.state.tracks.length) {
       currentIndex += 1;
@@ -108,12 +119,33 @@ class AdListing extends Component {
 
   onPlayClicked() {
     let currentIndex = this.state.selectedIndex;
-    if (currentIndex >= this.state.tracks.length) {
+    if (currentIndex >= this.state.tracks.length || currentIndex < 0) {
       currentIndex = 0;
     }
     this.setState({
-      currentIndex,
+      selectedIndex: currentIndex,
+      playAds: false,
       playing: true,
+    })
+  }
+
+
+  onPlayAdClicked(selectedIndex) {
+    let playing = this.state.playing;
+    console.log('onPlayAdClicked', playing, this.state.selectedIndex)
+    if (this.state.selectedIndex < 0 ){
+      playing = true;
+    }
+    else {
+      if (this.state.selectedIndex == selectedIndex) {
+        playing = !playing;
+      }
+    }
+    console.log('onPlayAdClicked selectedIndex',selectedIndex, playing)
+    this.setState({
+      playAds: true,
+      selectedIndex: selectedIndex,
+      playing,
     })
   }
 
@@ -201,7 +233,7 @@ class AdListing extends Component {
         {/* <!-- AD LISTING --> */}
         <div id="ad-listing" className="container-fluid">
           {this.state.tracks.map((item, index) => (
-            <Ad item={item} playingTrack={playingTrack} key={index} />
+            <Ad key={index} aindex={index} item={item} playingTrack={playingTrack} onPlayClicked={this.onPlayAdClicked} />
           ))}
         </div>
       </div>
