@@ -37,7 +37,7 @@ class App extends Component {
                 <img id="img-logo" src="/images/logo.png" alt="Responsive logo" height="30" />
               </Link>
               <div>
-              <Link to="/">
+              {/* <Link to="/">
                 <small className="nav-main__lang" onClick={() => this.setState({lang: "vi"})}>VI</small>
               </Link>
               <Link to="/">
@@ -45,7 +45,7 @@ class App extends Component {
               </Link>
               <Link to="/">
               <small className="nav-main__lang" onClick={() => this.setState({lang: "mm"})}>MM</small>
-              </Link>
+              </Link> */}
                 <Link to="/adinsert">
                   <button id="btn-post" className="btn btn-dwarn no-shadow">POST</button>
                 </Link>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Upload from './components/Upload';
 import Recorder from './components/Recorder';
 import SugarService from './services/SugarService';
+import {Redirect} from 'react-router-dom';
 
 import './App.css';
 
@@ -26,6 +27,7 @@ class AdInsert extends Component {
       message: DefaultMessage,
       errorMessage: '',
       uploaded: false,
+      redirect: false,
     }
   }
 
@@ -102,6 +104,7 @@ class AdInsert extends Component {
         errorMessage: '',
         descriptionRecordUrl: null,
         images: [],
+        redirect: true
       });
       console.log('AdInsert result ne', result);
     }
@@ -115,6 +118,12 @@ class AdInsert extends Component {
   }
 
   render() {
+    const { redirect } = this.state;
+
+    if (redirect) {
+      return <Redirect to='/'/>;
+    }
+
     return (
       <div id="ad-insert">
         <form className="form-horizontal">
