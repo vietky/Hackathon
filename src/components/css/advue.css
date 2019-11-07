@@ -42,6 +42,10 @@
    /* color: #999; */
 }
 
+i.pause-icon {
+   box-shadow: #ffba00 7px 0px 0px 0px inset !important;
+}
+
 #owner-info {
    padding-top: 10px;
    border-top: 1px solid #E5E5E5;
