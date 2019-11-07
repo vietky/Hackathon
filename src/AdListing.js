@@ -50,15 +50,15 @@ class AdListing extends Component {
   }
 
   async fetchData(lang = this.state.lang) {
-    fetch(`${config.backend_base_url}/api/ads/search?lang=` + lang)
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({
-        tracks: data,
-        selectedIndex: 0,
-      });
-    })
-    .catch(console.log)
+    fetch(`${config.backend_base_url}/api/sgar/search?lang=` + lang)
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({
+          tracks: data,
+          selectedIndex: 0,
+        });
+      })
+      .catch(console.log)
   }
 
   onTrackEnded() {

@@ -14,7 +14,7 @@ class AdView extends Component {
   }
 
   componentDidMount() {
-    fetch(`${config.backend_base_url}/api/ads/` + window.location.pathname.split("adview/")[1])
+    fetch(`${config.backend_base_url}/api/sgar/` + window.location.pathname.split("adview/")[1])
       .then(res => res.json())
       .then((data) => {
         this.setState({
@@ -33,9 +33,9 @@ class AdView extends Component {
           {/* AD PHOTOS */}
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
-                {this.state.images.map((img, index) => (
-                  <li data-target="#carouselExampleIndicators" data-slide-to={index} className={index}></li>
-                ))}
+              {this.state.images.map((img, index) => (
+                <li data-target="#carouselExampleIndicators" data-slide-to={index} className={index}></li>
+              ))}
             </ol>
             <div className="carousel-inner">
               {this.state.images.map((img, index) => (
@@ -63,9 +63,9 @@ class AdView extends Component {
               {/* <!-- AD PRICE --> */}
               {
                 this.state.ad.price ?
-                <span id="ad-price" className="text-dred fmt-price">{Number(this.state.ad.price).toLocaleString('en')}</span>
-                :
-                ''
+                  <span id="ad-price" className="text-dred fmt-price">{Number(this.state.ad.price).toLocaleString('en')}</span>
+                  :
+                  ''
               }
               {/* <!-- AD SAVE --> */}
               <button id="ad-save" className="btn btn-light text-dred" type="button">

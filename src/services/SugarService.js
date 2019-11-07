@@ -6,7 +6,7 @@ class SugarService {
     this.baseUrl = baseUrl;
   }
   submit(obj) {
-    const url = `${this.baseUrl}/api/ads`;
+    const url = `${this.baseUrl}/api/sgar`;
     // console.log('url', url, obj);
     return fetch(url, {
       method: 'POST',
